@@ -15,10 +15,6 @@
     src: url("./fonts/Holgada_Regular.otf");
 }
 
-body {
-    margin: 0;
-    font-family: 'HolgadaRegular', sans-serif;
-}
 
 #turn {
     background: #2d2d2d;
@@ -44,7 +40,10 @@ body {
     text-align: center;
 }
 
-
+body {
+    margin: 0;
+    font-family: 'HolgadaRegular', sans-serif;
+}
 
 .container {
     margin: 0 auto;
@@ -183,6 +182,15 @@ body {
     margin: 0 0 5px 0;
 }
 
+.overview__close {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.overview__title {
+    margin-top: 0;
+}
+
 .slider .overview__body {
     font-size: 25px;
     overflow: auto;
@@ -194,8 +202,15 @@ body {
 
 @media (min-height: 740px) {
     .slider .overview__body {
-        max-height: 550px;
+        max-height: 400px;
     }
+}
+
+@media(max-height: 670px) {
+    .slider .overview__body {
+        max-height: 300px;
+    }
+
 }
 
 @media(max-height: 600px) {
@@ -204,6 +219,8 @@ body {
     }
 
 }
+
+
 
 .slider .prices {
     padding: 0 15px;
@@ -259,13 +276,14 @@ body {
 }
 
 .close {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     fill: white;
-    padding: 20px 20px;
 }
 
-@media(max-height: 600px) {
+
+
+@media(max-height: 640px) {
     .slider .overview__body {
         max-height: 250px;
     }
@@ -283,19 +301,9 @@ body {
         margin: 0;
     }
 
-    .time span {
-        font-size: 15px;
-    }
-
-    .price {
-        font-size: 20px;
-    }
-
-    .slider__card h1 {
-        font-size: 20px;
-        padding: 0 0 0 20px;
-    }
 }
+
+
 
 /*title*/
 
@@ -341,7 +349,32 @@ body {
     padding: 10px;
     margin-top: 20px;
     text-align: center;
-    opacity: 0.7;
+}
+
+@media(max-height: 850px) {
+    .slider__card h1 {
+        font-size: 20px;
+        padding: 0 0 0 10px;
+    }
+
+    .time span {
+        font-size: 10px;
+    }
+
+    .price {
+        font-size: 13px;
+    }
+    .time_svg {
+        width: 10px;
+        height: 10px;
+
+    }
+
+    .title__button {
+        font-size: 15px;
+    }
+
+
 }
 
 .title__input {
@@ -352,6 +385,7 @@ body {
     padding: 10px;
     border-radius: 15px;
     margin-top: 20px;
+    text-align: center;
     outline: none;
     border: none;
     text-align: left;
@@ -361,13 +395,11 @@ body {
 .send_button {
     margin-right: 40px;
     margin-left: 40px;
-    background: -webkit-linear-gradient(90deg, rgb(202, 143, 0), rgb(255, 255, 255) 50%, rgb(202, 143, 0));
-    background: -moz-linear-gradient(90deg, rgb(202, 143, 0), rgb(255, 255, 255) 50%, rgb(202, 143, 0));
-    background: linear-gradient(90deg, rgb(202, 143, 0), rgb(255, 255, 255) 50%, rgb(202, 143, 0));
+    opacity: 1;
 }
 
 .title__input::placeholder {
-    color: #9527d7;
+    color: #3F1E54;
     opacity: 0.8;
     text-align: left;
 }
@@ -378,9 +410,7 @@ body {
     font-weight: bold;
     margin-top: 50px;
     opacity: 1;
-    /*background: -webkit-linear-gradient(90deg, rgb(202, 143, 0), rgb(255, 255, 255) 50%, rgb(202, 143, 0));*/
-    /*background: -moz-linear-gradient(90deg, rgb(202, 143, 0), rgb(255, 255, 255) 50%, rgb(202, 143, 0));*/
-    /*background: linear-gradient(90deg, rgb(202, 143, 0), rgb(255, 255, 255) 50%, rgb(202, 143, 0));*/
+
 }
 
 @media(max-height: 740px) {
@@ -397,12 +427,21 @@ body {
     .last__button {
         margin-top: 20px;
     }
+    .prices {
+        font-size: 5px;
+    }
+
+    .title__button {
+        font-size: 15px;
+    }
 }
 
 @media(max-height: 600px) {
     .last__button {
         margin-top: 20px;
     }
+
+
 
     .title__button {
         font-size: 12px;
@@ -418,7 +457,6 @@ body {
 
     .title__input {
         margin-top: 10px;
-
     }
 }
 
@@ -434,8 +472,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     font-size: 1rem;
+    text-align: center;
     color: white;
     padding: 0 10px;
 }
@@ -450,6 +488,10 @@ body {
     cursor: pointer;
 }
 
+.back_to_title_button svg {
+    fill: white;
+}
+
 .background2 {
     position: absolute;
     top: 0;
@@ -461,5 +503,3 @@ body {
     background: linear-gradient(to right, #005c97, #4a339b);
     opacity: 0.7;
 }
-
-
