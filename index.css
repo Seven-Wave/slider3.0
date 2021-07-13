@@ -358,14 +358,14 @@ body {
 
 .description {
     display: block;
-    height: 0;
+    max-height: 0;
     overflow: hidden;
     transition: all .3s ease-in;
 }
 
 .open {
     /*display: block;*/
-    height: 180px;
+    max-height: 180px;
 }
 
 .menu__item_name {
@@ -403,7 +403,7 @@ body {
 
 @media (min-height: 850px) {
     .open {
-        height: 200px;
+        max-height: 200px;
     }
 }
 
