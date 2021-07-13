@@ -1,14 +1,9 @@
-$(document).ready(function (){
+$(document).ready(function () {
 
-    $('.slider').slick({
-        arrows: false,
-        dots: true,
-        // adaptiveHeight: true,
-    })
+
     $(".title__button").click(function(e){
         e.preventDefault()
         slideIndex = $(this).attr('data-slick-index')
-        console.log(parseInt(slideIndex))
         let slider = $('.slider')
         slider[0].slick.slickGoTo( parseInt(slideIndex) )
     })
@@ -18,27 +13,48 @@ $(document).ready(function (){
         slider[0].slick.slickGoTo(0)
     })
 
-    $('.slider__card').click(function () {
-        $('.overview').css({
-            'transform': 'translateY(0)'
-        })
 
-        $(this).css({
-            'opacity' : '0'
+    let items = $('.menu__item_block')
+    let arrows = $('.menu__item_arrow')
+    let descriptions = $('.description')
+    for (let i = 0; i < items.length; i++) {
+        items[i].addEventListener('click', () => {
+            arrows[i].classList.toggle('rotate90')
+            descriptions[i].classList.toggle('open')
         })
+    }
 
+    $('.slider').slick({
+        arrows: false,
+        dots: true,
+        // adaptiveHeight: true,
     })
 
+    // while () {
 
-    $('.close').click(function () {
-        $('.overview').css({
-            'transform': 'translateY(100%)'
-        })
+    // }
 
-        $('.slider__card').css({
-            'opacity' : '1'
-        })
-    })
+    // $('.slider__card').click(function () {
+    //     $('.overview').css({
+    //         'transform': 'translateY(0)'
+    //     })
+    //
+    //     $(this).css({
+    //         'opacity' : '0'
+    //     })
+    //
+    // })
+
+
+    // $('.close').click(function () {
+    //     $('.overview').css({
+    //         'transform': 'translateY(100%)'
+    //     })
+    //
+    //     $('.slider__card').css({
+    //         'opacity' : '1'
+    //     })
+    // })
 
 
 })
